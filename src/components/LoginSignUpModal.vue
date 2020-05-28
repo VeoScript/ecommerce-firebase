@@ -17,21 +17,7 @@
                         <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab">
                             
-                            <h5 class="text-center">Login Please</h5>
-                            <form @submit.prevent="login">
-                                <div class="form-group">
-                                    <label>Email address</label>
-                                    <input type="email" v-model="email" class="form-control" placeholder="Enter email">
-                                </div>
-                                <div class="form-group">
-                                    <label>Password</label>
-                                    <input type="password" v-model="password" class="form-control" placeholder="Password">
-                                </div>
-
-                                <div class="form-group">
-                                    <button class="btn btn-primary" :disabled="email == ''">Login</button>
-                                </div>
-                            </form>
+                            <form-login /> <!-- Form Login component -->
 
                         </div>
                             <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="pills-register-tab">
@@ -64,21 +50,8 @@
 export default {
     name: 'LoginSignUpModal',
 
-    data () {
-        return {
-            name: '',
-            email: '',
-            password: ''
-        }
-    },
-
-    methods: {
-        login() {
-
-        },
-        signup() {
-
-        }
+    components: {
+        FormLogin: () => import('./FormLogin')
     }
 
 }
