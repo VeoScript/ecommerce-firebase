@@ -79,6 +79,7 @@
 import { required, minLength, maxLength, email } from 'vuelidate/lib/validators'
 
 import { fb } from '@/firebase'
+import $ from 'jquery'
 
 export default {
     name: 'FormSignUp',
