@@ -31,7 +31,19 @@
             </div>
 
             <div class="form-group">
-                <button class="btn btn-primary" @click="login">Login</button>
+                <button 
+                    v-if="!loading"
+                    class="btn btn-primary" 
+                    @click="login">
+                    Login
+                </button>
+                <button 
+                    v-else
+                    type="button" 
+                    class="btn btn-primary" 
+                    disabled>
+                    <i class="fa fa-spinner mr-1 ml-2"></i> Loading...
+                </button>
             </div>
         </form>
     </div>
@@ -47,7 +59,8 @@ export default {
     data () {
         return {
             email: '',
-            password: ''
+            password: '',
+            loading: false
         }
     },
 
@@ -68,3 +81,15 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+
+@keyframes spinner {
+  to { transform: rotate(360deg); }
+}
+
+.fa-spinner {
+ animation: spinner 1s linear infinite !important;
+}
+
+</style>
