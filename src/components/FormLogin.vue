@@ -4,11 +4,30 @@
         <form @submit.prevent="login">
             <div class="form-group">
                 <label>Email address</label>
-                <input type="email" v-model="email" class="form-control" placeholder="Enter email">
+                <input 
+                    type="email" 
+                    v-model.trim="$v.email.$model"
+                    class="form-control"
+                    placeholder="Email"
+                    :class="{ 'is-invalid' : $v.email.$error, 'is-valid' : !$v.email.$invalid }"
+                >
+                <div class="invalid-feedback feedback">
+                    <span v-if="!$v.email.required">Email is required</span>
+                    <span v-if="!$v.email.email">Email is invalid.</span>
+                </div>
             </div>
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" v-model="password" class="form-control" placeholder="Password">
+                <input 
+                    type="password" 
+                    v-model.trim="$v.password.$model" 
+                    class="form-control" 
+                    placeholder="Password"
+                    :class="{ 'is-invalid' : $v.password.$error, 'is-valid' : !$v.password.$invalid }"
+                >
+                <div class="invalid-feedback feedback">
+                    <span v-if="!$v.password.required">Password is required</span>
+                </div>
             </div>
 
             <div class="form-group">
@@ -38,8 +57,7 @@ export default {
             email
         },
         password: {
-            required,
-            minLength: minLength(8)
+            required
         }
     },
 
