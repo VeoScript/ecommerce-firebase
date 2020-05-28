@@ -10,7 +10,6 @@
                     v-model.trim="$v.name.$model"
                     :class="{ 'is-invalid' : $v.name.$error, 'is-valid' : !$v.name.$invalid }"
                     class="form-control" 
-                    placeholder="Your nice name"
                 >
                 <div class="invalid-feedback feedback">
                     <span v-if="!$v.name.required">Name is required</span>
@@ -25,7 +24,6 @@
                     v-model.trim="$v.email.$model" 
                     :class="{ 'is-invalid' : $v.email.$error, 'is-valid' : !$v.email.$invalid }"
                     class="form-control" 
-                    placeholder="Enter email"
                 >
                 <div class="invalid-feedback feedback">
                     <span v-if="!$v.email.required">Email is required</span>

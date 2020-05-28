@@ -11,7 +11,6 @@
                     type="email" 
                     v-model.trim="$v.email.$model"
                     class="form-control"
-                    placeholder="Email"
                     :class="{ 'is-invalid' : $v.email.$error, 'is-valid' : !$v.email.$invalid }"
                 >
                 <div class="invalid-feedback feedback">
