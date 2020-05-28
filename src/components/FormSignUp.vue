@@ -19,3 +19,23 @@
         </form>
     </div>
 </template>
+
+<script>
+export default {
+    name: 'FormSignUp',
+
+    data () {
+        return {
+            name: '',
+            email: '',
+            password: ''
+        }
+    },
+
+    methods: {
+        signup () {
+            alert('Sign Up')
+        }
+    }
+}
+</script>
