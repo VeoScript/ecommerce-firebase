@@ -5,42 +5,24 @@
 
                 <div class="modal-body">
 
-                        <ul class="nav nav-fill nav-pills mb-3" id="pills-tab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-login" role="tab" aria-controls="pills-login" aria-selected="true">Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="pills-register-tab" data-toggle="pill" href="#pills-register" role="tab" aria-controls="pills-register" aria-selected="false">Signup</a>
-                            </li>
-                        </ul>
+                    <ul class="nav nav-fill nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-login" role="tab" aria-controls="pills-login" aria-selected="true">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="pills-register-tab" data-toggle="pill" href="#pills-register" role="tab" aria-controls="pills-register" aria-selected="false">Signup</a>
+                        </li>
+                    </ul>
 
-                        <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab">
-                            
-                            <form-login /> <!-- Form Login component -->
+                    <div class="tab-content" id="pills-tabContent">
+                    
+                        <form-login /> <!-- Form Login component -->                        
+                    
+                        <form-sign-up /> <!-- Form Sign Up component -->
 
-                        </div>
-                            <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="pills-register-tab">
-                                <form @submit.prevent="signup">
-                                    <div class="form-group">
-                                        <label for="name">Your name</label>
-                                        <input type="text" v-model="name" class="form-control" placeholder="Your nice name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email">Email address</label>
-                                        <input type="email"  v-model="email" class="form-control" placeholder="Enter email">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input type="password" v-model="password" class="form-control" placeholder="Password">
-                                    </div>
-                                    <div class="form-group">
-                                        <button class="btn btn-primary" @click="signup">Signup</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -51,7 +33,8 @@ export default {
     name: 'LoginSignUpModal',
 
     components: {
-        FormLogin: () => import('./FormLogin')
+        FormLogin: () => import('./FormLogin'),
+        FormSignUp: () => import('./FormSignUp')
     }
 
 }
