@@ -18,7 +18,6 @@
                         <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab">
                             
                             <h5 class="text-center">Login Please</h5>
-                            <alert v-if="error" :message="error" />
                             <form @submit.prevent="login">
                                 <div class="form-group">
                                     <label>Email address</label>
@@ -37,7 +36,6 @@
                         </div>
                             <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="pills-register-tab">
                                 <form @submit.prevent="signup">
-                                    <h5 class="text-center">Create New Account</h5>
                                     <alert v-if="error" :message="error" />
                                     <div class="form-group">
                                         <label for="name">Your name</label>
@@ -73,6 +71,7 @@ export default {
             email: '',
             password: ''
         }
-    }
+    },
+
 }
 </script>
