@@ -14,7 +14,14 @@ const routes = [
     path: '/admin',
     name: 'admin',
     component: () => import('@/views/Admin.vue'),
-    meta: { requiresAuth: true }
+    meta: { requiresAuth: true },
+    children: [
+      {
+        path: 'products',
+        name: 'products',
+        component: () => import('@/views/Products.vue')
+      }
+    ]
   }
 ]
 
