@@ -32,6 +32,18 @@ export default {
         }
     },
 
+    validations: {
+        name: {
+            required,
+            minLength: minLength(3),
+            maxLength: maxLength(20)
+        },
+        password: {
+            required,
+            minLength: minLength(8)
+        }
+    },
+
     methods: {
         login() {
             alert('Login')
