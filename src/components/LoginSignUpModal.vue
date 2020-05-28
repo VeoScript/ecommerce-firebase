@@ -36,7 +36,6 @@
                         </div>
                             <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="pills-register-tab">
                                 <form @submit.prevent="signup">
-                                    <alert v-if="error" :message="error" />
                                     <div class="form-group">
                                         <label for="name">Your name</label>
                                         <input type="text" v-model="name" class="form-control" placeholder="Your nice name">
@@ -72,6 +71,15 @@ export default {
             password: ''
         }
     },
+
+    methods: {
+        login() {
+
+        },
+        signup() {
+
+        }
+    }
 
 }
 </script>
