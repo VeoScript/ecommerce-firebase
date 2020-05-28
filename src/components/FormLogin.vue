@@ -21,15 +21,24 @@
             </div>
             <div class="form-group">
                 <label>Password</label>
-                <input 
-                    type="password" 
-                    v-model.trim="$v.password.$model" 
-                    class="form-control" 
-                    placeholder="Password"
-                    :class="{ 'is-invalid' : $v.password.$error, 'is-valid' : !$v.password.$invalid }"
-                >
-                <div class="invalid-feedback feedback">
-                    <span v-if="!$v.password.required">Password is required</span>
+                <div class="input-group">
+                     <input 
+                        type="password" 
+                        class="form-control" 
+                        v-model.trim="$v.password.$model"
+                        :class="{ 'is-invalid' : $v.password.$error, 'is-valid' : !$v.password.$invalid }"
+                    >
+                    <div class="input-group-append" @click="toggleShowPassword" style="cursor: pointer;">
+                        <i v-if="!showpassword" class="input-group-text">
+                            <i class="fa fa-eye-slash"></i>
+                        </i>
+                        <i v-else class="input-group-text">
+                            <i class="fa fa-eye"></i>
+                        </i>
+                    </div>
+                    <div class="invalid-feedback feedback">
+                        <span v-if="!$v.password.required">Password is required</span>
+                    </div>
                 </div>
             </div>
 
@@ -67,7 +76,8 @@ export default {
             email: '',
             password: '',
             error: '',
-            loading: false
+            loading: false,
+            showpassword: false
         }
     },
 
@@ -114,6 +124,16 @@ export default {
                             this.error = error
                         }
                     })
+            }
+        },
+        toggleShowPassword() {
+            let show = document.getElementById('password')
+            if(this.showpassword == false) {
+                this.showpassword = true
+                show.type = 'text'
+            } else {
+                this.showpassword = false
+                show.type = 'password'
             }
         }
     }
