@@ -19,6 +19,9 @@
 </template>
 
 <script>
+
+import { required, minLength, maxLength, email } from 'vuelidate/lib/validators'
+
 export default {
     name: 'FormLogin',
 
