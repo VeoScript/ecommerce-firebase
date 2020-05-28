@@ -90,7 +90,8 @@
       </nav>
       <!-- page-content  -->
       <main class="page-content pt-2">
-        <router-view />
+        <overview  v-if="$route.path === '/admin'" />
+        <router-view  v-else />
       </main>
       <!-- page-content" -->
     </div>
@@ -104,6 +105,10 @@ import { fb } from '@/firebase'
 
 export default {
   name: 'Admin',
+
+  components: {
+    Overview: () => import('./Overview')
+  },
 
   methods: {
     logout() {
