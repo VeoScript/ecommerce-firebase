@@ -7,12 +7,19 @@ import "jquery";
 import "popper.js";
 import "bootstrap";
 import "@/assets/app.scss";
+import { fb } from '@/firebase'
 
 Vue.config.productionTip = false;
 Vue.use(Vuelidate)
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount("#app");
+let app = ''
+
+fb.auth().onAuthStateChanged(function(user) {
+  if(!app) {
+    new Vue({
+      router,
+      store,
+      render: h => h(App)
+    }).$mount("#app");
+  }
+})
