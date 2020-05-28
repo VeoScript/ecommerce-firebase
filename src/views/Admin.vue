@@ -90,8 +90,10 @@
       </nav>
       <!-- page-content  -->
       <main class="page-content pt-2">
-        <overview  v-if="$route.path === '/admin'" />
-        <router-view  v-else />
+        <vue-page-transition name="fade-in-right">
+          <overview  v-if="$route.path === '/admin'" />
+          <router-view  v-else />
+        </vue-page-transition>
       </main>
       <!-- page-content" -->
     </div>
