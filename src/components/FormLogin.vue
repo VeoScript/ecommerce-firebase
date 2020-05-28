@@ -56,6 +56,9 @@
 
 import { required, minLength, maxLength, email } from 'vuelidate/lib/validators'
 
+import { fb } from '@/firebase'
+import $ from 'jquery'
+
 export default {
     name: 'FormLogin',
 
@@ -84,7 +87,33 @@ export default {
 
     methods: {
         login() {
-            alert('Login')
+            this.$v.$touch()
+            if (!this.$v.$invalid) {
+
+                this. loading = true
+                const { email, password } = this.$data
+
+                fb.auth().signInWithEmailAndPassword(email, password)
+                    .then(() => {          
+                        $('#login').modal('hide')
+                        this.loading = false
+                        this.email = ''
+                        this.password = ''
+                        this.$router.push('/admin')
+                    })
+                    .catch(error => {
+                        this.loading = false
+                        let errorCode = error.code;
+                        let errorMessage = error.message;
+                        if (errorCode) {
+                            this.error = errorCode
+                        } else if (errorMessage) {
+                            this.error = errorMessage
+                        } else {
+                            this.error = error
+                        }
+                    })
+            }
         }
     }
 }
