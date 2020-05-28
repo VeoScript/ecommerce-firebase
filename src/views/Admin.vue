@@ -53,7 +53,7 @@
               </li>
 
               <li>
-                <router-link to="/admin/overview">
+                <router-link to="/admin">
                   <i class="fa fa-chart-line"></i>
                   <span>Overview</span>
                 </router-link>
