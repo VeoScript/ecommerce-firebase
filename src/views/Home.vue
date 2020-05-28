@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-     <nav-bar />
+     <nav-bar /> <!-- Navbar component -->
+     <hero /> <!-- Hero component -->
   </div>
 </template>
 
@@ -10,7 +11,8 @@ export default {
   name: 'Home',
 
   components: {
-    NavBar: () => import('@/components/NavBar')
+    NavBar: () => import('@/components/NavBar'),
+    Hero: () => import('@/components/Hero')
   }
 };
 </script>
