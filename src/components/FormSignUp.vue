@@ -37,7 +37,6 @@
                 <div class="input-group">
                         <input 
                         type="password" 
-                        id="password"
                         class="form-control" 
                         v-model.trim="$v.password.$model"
                         :class="{ 'is-invalid' : $v.password.$error, 'is-valid' : !$v.password.$invalid }"
