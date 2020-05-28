@@ -33,10 +33,9 @@ export default {
     },
 
     validations: {
-        name: {
+        email: {
             required,
-            minLength: minLength(3),
-            maxLength: maxLength(20)
+            email
         },
         password: {
             required,
