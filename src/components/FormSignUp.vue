@@ -79,6 +79,8 @@
 
 import { required, minLength, maxLength, email } from 'vuelidate/lib/validators'
 
+import { fb } from '@/firebase'
+
 export default {
     name: 'FormSignUp',
 
@@ -122,10 +124,13 @@ export default {
 
                 fb.auth().createUserWithEmailAndPassword(email, password)
                     .then(() => {          
+                        this.loading = false
                         $('#login').modal('hide')
+                        this.$v.$reset()
                         this.$router.push('/admin')
                     })
                     .catch(error => {
+                        this.loading = false
                         let errorCode = error.code;
                         let errorMessage = error.message;
                         if (errorCode) {
