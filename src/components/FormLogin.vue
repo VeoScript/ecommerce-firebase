@@ -1,6 +1,9 @@
 <template>
     <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab">
         <h5 class="text-center">Login Please</h5>
+
+        <alert :message="error" v-if="error"/>
+
         <form @submit.prevent="login">
             <div class="form-group">
                 <label>Email address</label>
@@ -60,8 +63,13 @@ export default {
         return {
             email: '',
             password: '',
+            error: '',
             loading: false
         }
+    },
+
+    components: {
+        Alert: () => import('@/components/Alert')
     },
 
     validations: {
