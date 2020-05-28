@@ -99,6 +99,7 @@ export default {
                         this.loading = false
                         this.email = ''
                         this.password = ''
+                        this.$v.$reset()
                         this.$router.push('/admin')
                     })
                     .catch(error => {
