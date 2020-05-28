@@ -62,3 +62,17 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    name: 'LoginSignUpModal',
+
+    data () {
+        return {
+            name: '',
+            email: '',
+            password: ''
+        }
+    }
+}
+</script>
