@@ -2,6 +2,7 @@
   <div class="home">
      <nav-bar /> <!-- Navbar component -->
      <hero /> <!-- Hero component -->
+     <login-sign-up-modal /> <!--  -->
   </div>
 </template>
 
@@ -12,7 +13,8 @@ export default {
 
   components: {
     NavBar: () => import('@/components/NavBar'),
-    Hero: () => import('@/components/Hero')
+    Hero: () => import('@/components/Hero'),
+    LoginSignUpModal: () => import('@/components/LoginSignUpModal')
   }
 };
 </script>
