@@ -23,7 +23,7 @@
         </div>
         <div class="col-md-7">
           <div class="graphic">
-            <img src="/img/svg/graphic.svg" alt="" />
+            <img src="@/assets/img/svg/graphic.svg" alt="" />
           </div>
         </div>
       </div>
