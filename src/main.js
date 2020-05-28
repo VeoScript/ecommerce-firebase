@@ -3,6 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import Vuelidate from 'vuelidate'
+import VuePageTransition from 'vue-page-transition'
 import "jquery";
 import "popper.js";
 import "bootstrap";
@@ -11,6 +12,7 @@ import { fb } from '@/firebase'
 
 Vue.config.productionTip = false;
 Vue.use(Vuelidate)
+Vue.use(VuePageTransition)
 
 let app = ''
 
