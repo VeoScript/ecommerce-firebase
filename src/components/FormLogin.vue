@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab">
         <h5 class="text-center">Login Please</h5>
         <form @submit.prevent="login">
             <div class="form-group">
@@ -12,8 +12,27 @@
             </div>
 
             <div class="form-group">
-                <button class="btn btn-primary" :disabled="email == ''">Login</button>
+                <button class="btn btn-primary" @click="login">Login</button>
             </div>
         </form>
     </div>
 </template>
+
+<script>
+export default {
+    name: 'FormLogin',
+
+    data () {
+        return {
+            email: '',
+            password: ''
+        }
+    },
+
+    methods: {
+        login() {
+            alert('Login')
+        }
+    }
+}
+</script>
